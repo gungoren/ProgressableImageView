@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.gungoren.photoslider.MainActivity">
 
-    <com.gungoren.sliderlib.SlidingView
+    <com.gungoren.view.ProgressableImageView
         android:id="@+id/top"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"

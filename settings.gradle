@@ -1,1 +1,1 @@
-include ':app', ':sliderlib'
+include ':app', ':progressable-imageview-lib'

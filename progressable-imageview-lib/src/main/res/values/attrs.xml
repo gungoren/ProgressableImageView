@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <declare-styleable name="SlidingView">
+    <declare-styleable name="ProgressableImageView">
         <attr name="dividerColor" format="color"/>
         <attr name="dividerWidth" format="dimension"/>
         <attr name="slideRatio" format="float"/>

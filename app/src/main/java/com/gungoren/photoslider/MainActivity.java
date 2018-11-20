@@ -4,18 +4,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.SeekBar;
 
-import com.gungoren.sliderlib.SlidingView;
+import com.gungoren.view.ProgressableImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private SlidingView slidingView;
+    private ProgressableImageView progressableImageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        slidingView = findViewById(R.id.top);
+        progressableImageView = findViewById(R.id.top);
         SeekBar progress = findViewById(R.id.seekbar);
         SeekBar seekBarDividerWidth = findViewById(R.id.seekbar_dividerWidth);
 
@@ -33,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
                 switch (seekBar.getId()) {
                     case R.id.seekbar:
                         float value = (float)progress / seekBar.getMax();
-                        slidingView.setSlidingRatio(value);
+                        progressableImageView.setSlidingRatio(value);
                         break;
                     case R.id.seekbar_dividerWidth:
-                        slidingView.setDividerWidthAsDp(progress);
+                        progressableImageView.setDividerWidthAsDp(progress);
                         break;
                 }
 

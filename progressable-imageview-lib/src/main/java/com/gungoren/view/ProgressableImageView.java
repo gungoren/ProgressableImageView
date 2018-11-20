@@ -1,4 +1,4 @@
-package com.gungoren.sliderlib;
+package com.gungoren.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -9,11 +9,10 @@ import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.support.annotation.DimenRes;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 
-public class SlidingView extends AppCompatImageView {
+public class ProgressableImageView extends AppCompatImageView {
 
     private Paint grayPaint;
     private Paint dividerPaint;
@@ -30,25 +29,25 @@ public class SlidingView extends AppCompatImageView {
     private Rect grayRectF = new Rect();
     private Rect openRectF = new Rect();
 
-    public SlidingView(Context context) {
+    public ProgressableImageView(Context context) {
         this(context, null);
     }
 
-    public SlidingView(Context context, AttributeSet attrs) {
+    public ProgressableImageView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public SlidingView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ProgressableImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
 
     private void init(Context context, AttributeSet attributeSet) {
 
-        TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.SlidingView);
-        dividerColor = typedArray.getColor(R.styleable.SlidingView_dividerColor, DEFAULT_DIVIDER_COLOR);
-        dividerWidth = typedArray.getDimension(R.styleable.SlidingView_dividerWidth, DEFAULT_DIVIDER_WIDTH);
-        slidingRatio = typedArray.getFloat(R.styleable.SlidingView_slideRatio, DEFAULT_SLIDING_RATIO);
+        TypedArray typedArray = context.obtainStyledAttributes(attributeSet, R.styleable.ProgressableImageView);
+        dividerColor = typedArray.getColor(R.styleable.ProgressableImageView_dividerColor, DEFAULT_DIVIDER_COLOR);
+        dividerWidth = typedArray.getDimension(R.styleable.ProgressableImageView_dividerWidth, DEFAULT_DIVIDER_WIDTH);
+        slidingRatio = typedArray.getFloat(R.styleable.ProgressableImageView_slideRatio, DEFAULT_SLIDING_RATIO);
         typedArray.recycle();
 
         if (slidingRatio > 1 || slidingRatio < 0) {
