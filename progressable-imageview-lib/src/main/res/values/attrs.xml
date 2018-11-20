@@ -4,6 +4,6 @@
     <declare-styleable name="ProgressableImageView">
         <attr name="dividerColor" format="color"/>
         <attr name="dividerWidth" format="dimension"/>
-        <attr name="slideRatio" format="float"/>
+        <attr name="progress" format="float"/>
     </declare-styleable>
 </resources>

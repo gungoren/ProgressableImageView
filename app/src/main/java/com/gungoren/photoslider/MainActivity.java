@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (seekBar.getId()) {
                     case R.id.seekbar:
                         float value = (float)progress / seekBar.getMax();
-                        progressableImageView.setSlidingRatio(value);
+                        progressableImageView.setProgress(value);
                         break;
                     case R.id.seekbar_dividerWidth:
                         progressableImageView.setDividerWidthAsDp(progress);
