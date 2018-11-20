@@ -14,7 +14,7 @@
         android:scaleType="fitXY"
         android:layout_margin="20dp"
         app:dividerColor="@color/colorAccent"
-        app:slideRatio="0.3"
+        app:progress="0.3"
         app:dividerWidth="2dp"/>
 
 

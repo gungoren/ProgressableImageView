@@ -9,6 +9,7 @@ import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.support.annotation.ColorRes;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 
@@ -101,7 +102,7 @@ public class ProgressableImageView extends AppCompatImageView {
         return dp * getContext().getResources().getDisplayMetrics().density;
     }
 
-    public void setDividerColor(int dividerColor) {
+    public void setDividerColor(@ColorRes  int dividerColor) {
         this.dividerColor = dividerColor;
         updateDividerColor(dividerColor);
         invalidate();
