@@ -17,8 +17,9 @@ public class MainActivity extends AppCompatActivity {
 
         progressableImageView = findViewById(R.id.top);
         SeekBar progress = findViewById(R.id.seekbar);
+        progress.setProgress(30);
         SeekBar seekBarDividerWidth = findViewById(R.id.seekbar_dividerWidth);
-
+        seekBarDividerWidth.setProgress(2);
 
         SeekBarChangeListener seekBarChangeListener = new SeekBarChangeListener();
         progress.setOnSeekBarChangeListener(seekBarChangeListener);

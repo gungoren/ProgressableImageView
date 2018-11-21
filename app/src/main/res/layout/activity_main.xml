@@ -13,7 +13,7 @@
         android:src="@drawable/pinguinus"
         android:scaleType="fitXY"
         android:layout_margin="20dp"
-        app:dividerColor="@color/colorAccent"
+        app:dividerColor="@color/divider_color"
         app:progress="0.3"
         app:dividerWidth="2dp"/>
 
@@ -23,9 +23,7 @@
         android:layout_below="@+id/top"
         android:layout_width="match_parent"
         android:max="100"
-        android:progress="30"
-        android:progressTint="@color/colorAccent"
-        android:progressBackgroundTint="@color/colorPrimary"
+        style="@style/MySeekBarTheme"
         android:layout_height="10dp"/>
 
     <SeekBar
@@ -34,8 +32,6 @@
         android:layout_width="match_parent"
         android:max="20"
         android:layout_marginTop="20dp"
-        android:progressTint="@color/colorAccent"
-        android:progressBackgroundTint="@color/colorPrimary"
-        android:progress="10"
+        style="@style/MySeekBarTheme"
         android:layout_height="10dp"/>
 </RelativeLayout>
