@@ -1,6 +1,6 @@
 # ProgressableImageView
 
-Motivated by layout in [World of Words](https://play.google.com/store/apps/details?id=com.fugo.wow) app.
+Motivated by layout in [Words Of Wonders](https://play.google.com/store/apps/details?id=com.fugo.wow) app.
 
 ## Demo
 <img src="https://github.com/gungoren/ProgressableImageView/blob/master/art/progress.gif"/>
