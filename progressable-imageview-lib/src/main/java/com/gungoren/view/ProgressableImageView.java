@@ -102,7 +102,7 @@ public class ProgressableImageView extends AppCompatImageView {
         return dp * getContext().getResources().getDisplayMetrics().density;
     }
 
-    public void setDividerColor(@ColorRes  int dividerColor) {
+    public void setDividerColor(int dividerColor) {
         this.dividerColor = dividerColor;
         updateDividerColor(dividerColor);
         invalidate();

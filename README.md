@@ -1,18 +1,15 @@
 # ProgressableImageView
-Scale your layout on user interaction. [Live Demo](https://www.youtube.com/watch?v=wA41H0UMoHQ)
 
-Motivated by layout in [Blinkist](https://play.google.com/store/apps/details?id=com.blinkslabs.blinkist.android) app and search bar in [Spotify](https://play.google.com/store/apps/details?id=com.spotify.music) app.
-
-<img src="https://raw.githubusercontent.com/iammert/ScalingLayout/master/art/cover_scaling.png"/>
+Motivated by layout in [World of Words](https://play.google.com/store/apps/details?id=com.fugo.wow) app.
 
 ## Demo
-<img src="https://github.com/iammert/ScalingLayout/blob/master/art/gif_behavior.gif"/>
+<img src="https://github.com/gungoren/ProgressableImageView/blob/master/art/progress.gif"/>
 
-## Fab Demo
-<img src="https://github.com/iammert/ScalingLayout/blob/master/art/gif_fab.gif"/>
+## Divider Width Demo
+<img src="https://github.com/gungoren/ProgressableImageView/blob/master/art/divider_width.gif"/>
 
-## Spotify Search Demo
-<img src="https://github.com/iammert/ScalingLayout/blob/master/art/gif_searchbar.gif"/>
+## Divider Color Demo
+<img src="https://github.com/gungoren/ProgressableImageView/blob/master/art/divider_color.gif"/>
 
 ## Usage
 ```xml
@@ -41,17 +38,13 @@ progressableImageView.setDividerColor(color); //use this for set a new color div
 ```app:dividerWidth``` value is divider width which type is dimen.
 
 
-## Download
-<a href='https://ko-fi.com/P5P872LP' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://az743702.vo.msecnd.net/cdn/kofi1.png?v=0' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
-
-
 ```gradle
 maven { url 'https://jitpack.io' }
 ```
 
 ```gradle
 dependencies {
-  compile 'com.github.iammert:ScalingLayout:1.2.1'
+  compile 'com.github.gungoren:ProgressableImageView:1.0.0'
 }
 ```
 License
