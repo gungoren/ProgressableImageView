@@ -1,19 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.gungoren.photoslider.MainActivity">
+    android:background="@drawable/galaxy">
+
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/back"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitCenter"
+        android:layout_alignParentStart="true"
+        android:contentDescription="back" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/month"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/back"
+        android:textColor="@color/white"
+        android:textSize="32sp"/>
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/country"
+        android:gravity="center"
+        android:layout_below="@+id/title"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:textSize="28sp"/>
 
     <com.gungoren.view.ProgressableImageView
         android:id="@+id/top"
+        android:background="@drawable/bg_img"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:src="@drawable/pinguinus"
+        android:src="@drawable/dubai"
         android:scaleType="fitXY"
         android:layout_margin="20dp"
         app:dividerColor="@color/divider_color"
+        android:layout_below="@id/desc"
         app:progress="0.3"
         app:dividerWidth="2dp"/>
 

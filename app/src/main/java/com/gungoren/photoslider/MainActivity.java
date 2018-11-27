@@ -38,18 +38,18 @@ public class MainActivity extends AppCompatActivity {
             public void onAnimationUpdate(ValueAnimator animation) {
                 int animatedValue = (int) animation.getAnimatedValue();
 
-                int value = animatedValue / 20;
+                /*int value = animatedValue / 20;
                 int[] colors = getResources().getIntArray(R.array.rainbow);
                 if (value >= colors.length)
                     return;
                 int color = colors[value];
-                progressableImageView.setDividerColor(color);
+                progressableImageView.setDividerColor(color);*/
 
                 //float value = (float)animatedValue / 5;
                 //progressableImageView.setDividerWidthAsDp(animatedValue);
 
-                //float value = (float)animatedValue / 100;
-                //progressableImageView.setProgress(value);
+                float value = (float)animatedValue / 100;
+                progressableImageView.setProgress(value);
 
             }
         });
