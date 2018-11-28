@@ -1,11 +1,8 @@
 package com.gungoren.photoslider;
 
-import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
-import android.graphics.Color;
-import android.support.v4.graphics.ColorUtils;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.SeekBar;
 
 import com.gungoren.view.ProgressableImageView;

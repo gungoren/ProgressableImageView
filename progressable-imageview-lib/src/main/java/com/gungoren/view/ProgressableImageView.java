@@ -9,7 +9,11 @@ import android.graphics.ColorMatrix;
 import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.support.annotation.ColorRes;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.Icon;
+import android.net.Uri;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
 
@@ -21,11 +25,13 @@ public class ProgressableImageView extends AppCompatImageView {
     private final float DEFAULT_DIVIDER_WIDTH = 10.0f;
     private final int DEFAULT_DIVIDER_COLOR = Color.BLACK;
     private final float DEFAULT_PROGRESS = 0.3f;
+    private final int DEFAULT_DIRECTION = 0;
 
     private Bitmap original;
     private float dividerWidth;
     private int dividerColor;
     private float progress;
+    private ProgressDirection direction;
     private Rect dividerRect = new Rect();
     private Rect grayRectF = new Rect();
     private Rect openRectF = new Rect();
@@ -49,6 +55,7 @@ public class ProgressableImageView extends AppCompatImageView {
         dividerColor = typedArray.getColor(R.styleable.ProgressableImageView_dividerColor, DEFAULT_DIVIDER_COLOR);
         dividerWidth = typedArray.getDimension(R.styleable.ProgressableImageView_dividerWidth, DEFAULT_DIVIDER_WIDTH);
         progress = typedArray.getFloat(R.styleable.ProgressableImageView_progress, DEFAULT_PROGRESS);
+        direction = ProgressDirection.fromId(typedArray.getInt(R.styleable.ProgressableImageView_direction, DEFAULT_DIRECTION));
         typedArray.recycle();
 
         if (progress > 1 || progress < 0) {
@@ -110,14 +117,72 @@ public class ProgressableImageView extends AppCompatImageView {
 
     public void setProgress(float progress) {
         if (progress < 0 || progress > 1)
-            throw new RuntimeException("Progress must be between 0 and 1");
+            throw new IllegalArgumentException("Progress must be between 0 and 1");
         this.progress = progress;
+        updateRects();
+        invalidate();
+    }
+
+    public ProgressDirection getDirection() {
+        return direction;
+    }
+
+    public void setDirection(ProgressDirection direction) {
+        this.direction = direction;
         updateRects();
         invalidate();
     }
 
     private void updateDividerColor(int dividerColor) {
         dividerPaint.setColor(dividerColor);
+    }
+
+    @Override
+    public void setImageResource(int resId) {
+        super.setImageResource(resId);
+        original = null;
+    }
+
+    @Override
+    public void setImageDrawable(@Nullable Drawable drawable) {
+        super.setImageDrawable(drawable);
+        original = null;
+    }
+
+    @Override
+    public void setImageBitmap(Bitmap bm) {
+        super.setImageBitmap(bm);
+        original = null;
+    }
+
+    @Override
+    public void setImageIcon(@Nullable Icon icon) {
+        super.setImageIcon(icon);
+        original = null;
+    }
+
+    @Override
+    public void setImageURI(@Nullable Uri uri) {
+        super.setImageURI(uri);
+        original = null;
+    }
+
+    @Override
+    public void invalidateDrawable(@NonNull Drawable dr) {
+        super.invalidateDrawable(dr);
+        original = null;
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasWindowFocus) {
+        super.onWindowFocusChanged(hasWindowFocus);
+        updateRects();
+    }
+
+    @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+        updateRects();
     }
 
     private void updateRects() {
@@ -128,16 +193,59 @@ public class ProgressableImageView extends AppCompatImageView {
 
     private void updateOpenRect() {
         float w = getWidth() * progress - dividerWidth / 2;
-        openRectF.set(0, 0, (int)w, getHeight());
+        float h = getHeight() * progress - dividerWidth / 2;
+        switch (direction){
+            case left_to_right:
+                openRectF.set(0, 0, (int)w, getHeight());
+                break;
+            case right_to_left:
+                openRectF.set((int)(getWidth() - w), 0, getWidth(), getHeight());
+                break;
+            case top_to_bottom:
+                openRectF.set(0, 0, getWidth(), (int)h);
+                break;
+            case bottom_to_top:
+                openRectF.set(0, (int)(getHeight() - h), getWidth(), getHeight());
+                break;
+        }
     }
 
     private void updateDividerRect() {
         float left = getWidth() * progress;
-        dividerRect.set((int)(left - dividerWidth / 2), 0, (int) (left + dividerWidth / 2), getHeight());
+        float top = getHeight() * progress;
+        switch (direction){
+            case left_to_right:
+                dividerRect.set((int)(left - dividerWidth / 2), 0, (int) (left + dividerWidth / 2), getHeight());
+                break;
+            case right_to_left:
+                dividerRect.set((int)(getWidth() - (left - dividerWidth / 2)), 0, (int) (getWidth() - (left + dividerWidth / 2)), getHeight());
+                break;
+            case top_to_bottom:
+                dividerRect.set(0, (int)(top - dividerWidth / 2), getWidth(), (int) (top + dividerWidth / 2));
+                break;
+            case bottom_to_top:
+                dividerRect.set(0, (int)(getHeight() - (top - dividerWidth / 2)), getWidth(), (int) (getHeight() - (top + dividerWidth / 2)));
+                break;
+        }
     }
 
     private void updateGrayRect() {
-        float w = getWidth() * progress + dividerWidth / 2;
-        grayRectF.set((int)w, 0, getWidth(), getHeight());
+        float left = getWidth() * progress + dividerWidth / 2;
+        float top = getHeight() * progress + dividerWidth / 2;
+
+        switch (direction){
+            case left_to_right:
+                grayRectF.set((int)left, 0, getWidth(), getHeight());
+                break;
+            case right_to_left:
+                grayRectF.set(0, 0, (int)(getWidth() - left), getHeight());
+                break;
+            case top_to_bottom:
+                grayRectF.set(0, (int)top, getWidth(), getHeight());
+                break;
+            case bottom_to_top:
+                grayRectF.set(0, 0, getWidth(), (int)(getHeight() - top));
+                break;
+        }
     }
 }
