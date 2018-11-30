@@ -1,5 +1,8 @@
 # ProgressableImageView
 
+[![](https://jitpack.io/v/gungoren/ProgressableImageView.svg)](https://jitpack.io/#gungoren/ProgressableImageView)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 Motivated by layout in [Words Of Wonders](https://play.google.com/store/apps/details?id=com.fugo.wow) app.
 
 ## Demo
@@ -51,6 +54,18 @@ dependencies {
   compile 'com.github.gungoren:ProgressableImageView:1.0.1'
 }
 ```
+
+## Issues
+
+If you've found an error in this library, please file an [issue][1].
+
+## Contributing
+
+Patches and new features are encouraged, and may be submitted by [forking this project][2] and submitting a pull request through GitHub. 
+
+[1]: https://github.com/gungoren/ProgressableImageView/issues
+[2]: https://github.com/gungoren/ProgressableImageView/fork
+
 License
 --------
 
