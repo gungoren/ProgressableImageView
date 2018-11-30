@@ -16,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:scaleType="fitCenter"
         android:layout_alignParentStart="true"
-        android:contentDescription="back" />
+        android:contentDescription="@string/back" />
 
     <TextView
         android:id="@+id/title"
@@ -53,24 +53,4 @@
         app:progress="0.3"
         app:direction="leftToRight"
         app:dividerWidth="2dp"/>
-
-
-    <SeekBar
-        android:id="@+id/seekbar"
-        android:layout_below="@+id/top"
-        android:layout_width="match_parent"
-        android:max="100"
-        style="@style/MySeekBarTheme"
-        android:layout_height="10dp"
-        android:visibility="gone"/>
-
-    <SeekBar
-        android:id="@+id/seekbar_dividerWidth"
-        android:layout_below="@+id/seekbar"
-        android:layout_width="match_parent"
-        android:max="20"
-        android:layout_marginTop="20dp"
-        style="@style/MySeekBarTheme"
-        android:layout_height="10dp"
-        android:visibility="gone"/>
 </RelativeLayout>
