@@ -1,7 +1,12 @@
 # ProgressableImageView
 
-[![](https://jitpack.io/v/gungoren/ProgressableImageView.svg)](https://jitpack.io/#gungoren/ProgressableImageView)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Platform](https://img.shields.io/badge/platform-android-green.svg)](https://github.com/gungoren/ProgressableImageView/)
+[![Relase](https://img.shields.io/github/release/gungoren/ProgressableImageView.svg)](https://github.com/gungoren/ProgressableImageView/releases)
+[![Distribution](https://jitpack.io/v/gungoren/ProgressableImageView.svg)](https://jitpack.io/#gungoren/ProgressableImageView)
+[![GitHub stars](https://img.shields.io/github/stars/gungoren/ProgressableImageView.svg)](https://github.com/gungoren/ProgressableImageView/stargazers) 
+[![GitHub issues](https://img.shields.io/github/issues/gungoren/ProgressableImageView.svg)](https://github.com/gungoren/ProgressableImageView/issues)
+[![GitHub license](https://img.shields.io/github/license/gungoren/ProgressableImageView.svg)](https://github.com/gungoren/ProgressableImageView)
+[![Buy me a Coffee](https://img.shields.io/badge/buy%20me%20a%20coffee-donate-green.svg)](https://ko-fi.com/D1D7MQC5) 
 
 Motivated by layout in [Words Of Wonders](https://play.google.com/store/apps/details?id=com.fugo.wow) app.
 
