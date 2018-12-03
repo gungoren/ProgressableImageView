@@ -16,6 +16,8 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
+import android.view.View;
 
 public class ProgressableImageView extends AppCompatImageView {
 
@@ -26,12 +28,14 @@ public class ProgressableImageView extends AppCompatImageView {
     private final int DEFAULT_DIVIDER_COLOR = Color.BLACK;
     private final float DEFAULT_PROGRESS = 0.3f;
     private final int DEFAULT_DIRECTION = 0;
+    private final boolean DEFAULT_TOUCHABLE = false;
 
     private Bitmap original;
     private float dividerWidth;
     private int dividerColor;
     private float progress;
     private ProgressDirection direction;
+    private boolean touchEnabled;
     private Rect dividerRect = new Rect();
     private Rect grayRectF = new Rect();
     private Rect openRectF = new Rect();
@@ -56,6 +60,7 @@ public class ProgressableImageView extends AppCompatImageView {
         dividerWidth = typedArray.getDimension(R.styleable.ProgressableImageView_dividerWidth, DEFAULT_DIVIDER_WIDTH);
         progress = typedArray.getFloat(R.styleable.ProgressableImageView_progress, DEFAULT_PROGRESS);
         direction = ProgressDirection.fromId(typedArray.getInt(R.styleable.ProgressableImageView_direction, DEFAULT_DIRECTION));
+        touchEnabled = typedArray.getBoolean(R.styleable.ProgressableImageView_touchEnabled, DEFAULT_TOUCHABLE);
         typedArray.recycle();
 
         if (progress > 1 || progress < 0) {
@@ -246,6 +251,63 @@ public class ProgressableImageView extends AppCompatImageView {
             case bottom_to_top:
                 grayRectF.set(0, 0, getWidth(), (int)(getHeight() - top));
                 break;
+        }
+    }
+
+    public boolean isTouchEnabled() {
+        return touchEnabled;
+    }
+
+    public void setTouchEnabled(boolean touchEnabled) {
+        this.touchEnabled = touchEnabled;
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        if (!touchEnabled || !isViewTouched(this, event))
+            return super.onTouchEvent(event);
+
+        switch (event.getActionMasked()) {
+            case MotionEvent.ACTION_DOWN:
+            case MotionEvent.ACTION_MOVE:
+            case MotionEvent.ACTION_UP:
+            case MotionEvent.ACTION_CANCEL:
+                calculateProgress(event);
+                break;
+        }
+
+        return true;
+    }
+
+    public static boolean isViewTouched(View view, MotionEvent motionEvent) {
+        int[] iArr = new int[2];
+        view.getLocationOnScreen(iArr);
+        int i = iArr[0];
+        int i2 = iArr[1];
+        return !(motionEvent.getRawX() < ((float) i) || motionEvent.getRawX() > ((float) (i + view.getWidth())) || motionEvent.getRawY() < ((float) i2) || motionEvent.getRawY() > ((float) (i2 + view.getHeight())));
+    }
+
+    private void calculateProgress(MotionEvent event) {
+        float x = event.getX();
+        float y = event.getY();
+        float progress = 0;
+        switch (direction){
+            case left_to_right:
+                progress = x / getWidth();
+                break;
+            case right_to_left:
+                progress = 1 - x / getWidth();
+                break;
+            case top_to_bottom:
+                progress = y / getHeight();
+                break;
+            case bottom_to_top:
+                progress = 1 - y / getHeight();
+                break;
+        }
+        if (progress != this.progress) {
+            progress = Math.min(1, Math.max(0, progress));
+            setProgress(progress);
         }
     }
 }

@@ -39,11 +39,11 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        progressableImageView.setDirection(ProgressDirection.bottom_to_top);
+        //progressableImageView.setDirection(ProgressDirection.bottom_to_top);
         firstProgress.setDuration(2500);
         firstProgress.setRepeatMode(ValueAnimator.REVERSE);
         firstProgress.setRepeatCount(ValueAnimator.INFINITE);
 
-        firstProgress.start();
+        //firstProgress.start();
     }
 }

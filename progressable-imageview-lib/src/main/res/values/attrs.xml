@@ -11,5 +11,6 @@
             <enum name="topToBottom" value="3" />
             <enum name="bottomToTop" value="4" />
         </attr>
+        <attr name="touchEnabled" format="boolean"/>
     </declare-styleable>
 </resources>

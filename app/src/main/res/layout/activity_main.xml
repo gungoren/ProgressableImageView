@@ -51,6 +51,7 @@
         app:dividerColor="@color/divider_color"
         android:layout_below="@id/desc"
         app:progress="0.3"
-        app:direction="leftToRight"
-        app:dividerWidth="2dp"/>
+        app:direction="bottomToTop"
+        app:dividerWidth="2dp"
+        app:touchEnabled="true"/>
 </RelativeLayout>
