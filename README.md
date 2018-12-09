@@ -32,8 +32,9 @@ Motivated by layout in [Words Of Wonders](https://play.google.com/store/apps/det
     app:dividerColor="@color/divider_color"
     android:layout_below="@id/desc"
     app:progress="0.3"
-    app:direction="leftToRight"
-    app:dividerWidth="2dp"/>
+    app:direction="bottomToTop"
+    app:dividerWidth="2dp"
+    app:touchEnabled="true"/>
 ```
 
 ```java
@@ -42,6 +43,7 @@ progressableImageView.setDividerWidthAsDp(dp); //use this if you want to change 
 progressableImageView.setDividerWidthAsPx(px); //use this if you want to change divider width. When it set to zero it will be invisible
 progressableImageView.setDividerColor(color); //use this for set a new color divider color.
 progressableImageView.setDirection(ProgressDirection.bottom_to_top); // use this if you wnat to change direction of progress available values [left_to_right, left_to_right, right_to_left, top_to_bottom, bottom_to_top]
+progressableImageView.setTouchEnabled(boolean) // enable progress change with touch event
 ```
 
 ## Attribute
@@ -49,6 +51,7 @@ progressableImageView.setDirection(ProgressDirection.bottom_to_top); // use this
 ```app:dividerColor``` value is color which type is color.
 ```app:dividerWidth``` value is divider width which type is dimen.
 ```app:direction``` value is for progress direction which type is enum and values [leftToRight,rightToLeft,topToBottom,bottomToTop].
+```app:touchEnabled``` value is for progress change by touch event which type is boolean.
 
 ```gradle
 maven { url 'https://jitpack.io' }
@@ -56,7 +59,7 @@ maven { url 'https://jitpack.io' }
 
 ```gradle
 dependencies {
-  compile 'com.github.gungoren:ProgressableImageView:1.0.1'
+  compile 'com.github.gungoren:ProgressableImageView:1.0.2'
 }
 ```
 
