@@ -4,6 +4,7 @@
 [![Relase](https://img.shields.io/github/release/gungoren/ProgressableImageView.svg)](https://github.com/gungoren/ProgressableImageView/releases)
 [![Distribution](https://jitpack.io/v/gungoren/ProgressableImageView.svg)](https://jitpack.io/#gungoren/ProgressableImageView)
 [![GitHub stars](https://img.shields.io/github/stars/gungoren/ProgressableImageView.svg)](https://github.com/gungoren/ProgressableImageView/stargazers) 
+[![GitHub forks](https://img.shields.io/github/forks/gungoren/ProgressableImageView.svg)](https://github.com/gungoren/ProgressableImageView/network/members)
 [![GitHub issues](https://img.shields.io/github/issues/gungoren/ProgressableImageView.svg)](https://github.com/gungoren/ProgressableImageView/issues)
 [![GitHub license](https://img.shields.io/github/license/gungoren/ProgressableImageView.svg)](https://github.com/gungoren/ProgressableImageView)
 [![Buy me a Coffee](https://img.shields.io/badge/buy%20me%20a%20coffee-donate-green.svg)](https://ko-fi.com/D1D7MQC5) 
