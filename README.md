@@ -2,7 +2,6 @@
 
 [![Platform](https://img.shields.io/badge/platform-android-green.svg)](https://github.com/gungoren/ProgressableImageView/)
 [![Build Status](https://travis-ci.org/gungoren/ProgressableImageView.svg?branch=master)](https://travis-ci.org/gungoren/ProgressableImageView)
-[![Relase](https://img.shields.io/github/release/gungoren/ProgressableImageView.svg)](https://github.com/gungoren/ProgressableImageView/releases)
 [![Distribution](https://jitpack.io/v/gungoren/ProgressableImageView.svg)](https://jitpack.io/#gungoren/ProgressableImageView)
 [![GitHub stars](https://img.shields.io/github/stars/gungoren/ProgressableImageView.svg)](https://github.com/gungoren/ProgressableImageView/stargazers) 
 [![GitHub forks](https://img.shields.io/github/forks/gungoren/ProgressableImageView.svg)](https://github.com/gungoren/ProgressableImageView/network/members)
