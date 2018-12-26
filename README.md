@@ -1,7 +1,7 @@
-# ProgressableImageView  &nbsp; [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Change%20your%20users%20progress%20capability%20with%20ProgressableImageView&url=https://github.com/gungoren/ProgressableImageView&via=gungoren&hashtags=progressbar,imageview,progressableimageview,customview,opensource)
+# ProgressableImageView
 
 [![Platform](https://img.shields.io/badge/platform-android-green.svg)](https://github.com/gungoren/ProgressableImageView/)
-[![Build Status](https://travis-ci.org/gungoren/ProgressableImageView.svg?branch=master)](https://travis-ci.org/gungoren/ProgressableImageView)
+[![Relase](https://img.shields.io/github/release/gungoren/ProgressableImageView.svg)](https://github.com/gungoren/ProgressableImageView/releases)
 [![Distribution](https://jitpack.io/v/gungoren/ProgressableImageView.svg)](https://jitpack.io/#gungoren/ProgressableImageView)
 [![GitHub stars](https://img.shields.io/github/stars/gungoren/ProgressableImageView.svg)](https://github.com/gungoren/ProgressableImageView/stargazers) 
 [![GitHub forks](https://img.shields.io/github/forks/gungoren/ProgressableImageView.svg)](https://github.com/gungoren/ProgressableImageView/network/members)
@@ -12,13 +12,11 @@
 Motivated by layout in [Words Of Wonders](https://play.google.com/store/apps/details?id=com.fugo.wow) app.
 
 ## Demo
+<p>
 <img src="https://github.com/gungoren/ProgressableImageView/blob/master/art/progress.gif"/>
-
-## Divider Width Demo
 <img src="https://github.com/gungoren/ProgressableImageView/blob/master/art/divider_width.gif"/>
-
-## Divider Color Demo
 <img src="https://github.com/gungoren/ProgressableImageView/blob/master/art/divider_color.gif"/>
+</p>
 
 ## Usage
 ```xml
@@ -48,10 +46,15 @@ progressableImageView.setTouchEnabled(boolean) // enable progress change with to
 ```
 
 ## Attribute
+
 ```app:progress``` value is between 0 and 1 float value. 1 = fullly bright. 0 = fully gray.
+
 ```app:dividerColor``` value is color which type is color.
+
 ```app:dividerWidth``` value is divider width which type is dimen.
+
 ```app:direction``` value is for progress direction which type is enum and values [leftToRight,rightToLeft,topToBottom,bottomToTop].
+
 ```app:touchEnabled``` value is for progress change by touch event which type is boolean.
 
 ```gradle
