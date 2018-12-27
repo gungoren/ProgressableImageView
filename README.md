@@ -13,9 +13,9 @@ Motivated by layout in [Words Of Wonders](https://play.google.com/store/apps/det
 
 ## Demo
 <p>
-<img src="https://github.com/gungoren/ProgressableImageView/blob/master/art/progress.gif" width=300/>
-<img src="https://github.com/gungoren/ProgressableImageView/blob/master/art/divider_width.gif" width=300/>
-<img src="https://github.com/gungoren/ProgressableImageView/blob/master/art/divider_color.gif" width=300/>
+<img src="https://github.com/gungoren/ProgressableImageView/blob/master/art/progress.gif" width=250></img>
+<img src="https://github.com/gungoren/ProgressableImageView/blob/master/art/divider_width.gif" width=250></img>
+<img src="https://github.com/gungoren/ProgressableImageView/blob/master/art/divider_color.gif" width=250></img>
 </p>
 
 ## Usage
